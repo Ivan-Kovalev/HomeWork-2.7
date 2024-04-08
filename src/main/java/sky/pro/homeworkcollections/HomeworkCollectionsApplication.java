@@ -1,4 +1,4 @@
-package pro.sky.homework_collections;
+package sky.pro.homeworkcollections;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
