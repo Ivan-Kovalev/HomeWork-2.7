@@ -1,14 +1,14 @@
-package sky.pro.homeworkcollections.exception;
+package sky.pro.homework_collections.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class EmployeeStorageIsFullException extends RuntimeException {
-    public EmployeeStorageIsFullException(String message) {
+public class EmployeeAlreadyAddedException extends EmployeeException {
+    public EmployeeAlreadyAddedException(String message) {
         super(message);
     }
 
+    @Override
     public HttpStatus getStatus() {
         return HttpStatus.BAD_REQUEST;
     }

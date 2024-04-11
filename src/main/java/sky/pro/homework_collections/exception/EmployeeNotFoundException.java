@@ -1,14 +1,14 @@
-package sky.pro.homeworkcollections.exception;
+package sky.pro.homework_collections.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_FOUND)
-public class EmployeeNotFoundException extends RuntimeException {
+public class EmployeeNotFoundException extends EmployeeException {
     public EmployeeNotFoundException(String message) {
         super(message);
     }
 
+    @Override
     public HttpStatus getStatus() {
         return HttpStatus.NOT_FOUND;
     }

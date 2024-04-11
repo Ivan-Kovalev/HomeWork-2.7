@@ -1,4 +1,4 @@
-package sky.pro.homeworkcollections.exception.exceptionhandler;
+package sky.pro.homework_collections.domain;
 
 public class ErrorDTO {
     private String status;
