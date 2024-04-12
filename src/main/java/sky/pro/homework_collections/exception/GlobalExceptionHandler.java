@@ -9,18 +9,8 @@ import java.util.Date;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<ErrorDTO> generateNotFoundException(EmployeeNotFoundException exception) {
-        return generateException(exception);
-    }
-
-    @ExceptionHandler(EmployeeAlreadyAddedException.class)
-    public ResponseEntity<ErrorDTO> generateNotFoundException(EmployeeAlreadyAddedException exception) {
-        return generateException(exception);
-    }
-
-    @ExceptionHandler(EmployeeStorageIsFullException.class)
-    public ResponseEntity<ErrorDTO> generateNotFoundException(EmployeeStorageIsFullException exception) {
+    @ExceptionHandler(EmployeeException.class)
+    public ResponseEntity<ErrorDTO> generateNotFoundException(EmployeeException exception) {
         return generateException(exception);
     }
 

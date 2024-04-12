@@ -33,7 +33,7 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/find")
-    public String findEmployee(@RequestParam("passport") Integer passport) {
+    public Employee findEmployee(@RequestParam("passport") Integer passport) {
         return employeeService.find(passport);
     }
 

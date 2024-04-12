@@ -31,18 +31,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee remove(Integer passport) {
         for (Integer key : employeeMap.keySet()) {
             if (key.equals(passport)) {
+                Employee employee = employeeMap.get(key);
                 employeeMap.remove(key);
-                break;
+                return employee;
             }
         }
         throw new EmployeeNotFoundException("Сотрудник с номером паспорта " + passport + " не найден");
     }
 
     @Override
-    public String find(Integer passport) {
+    public Employee find(Integer passport) {
         for (Employee value : employeeMap.values()) {
             if (value.getPassport().equals(passport)) {
-                return value.getFirstName() + " " + value.getLastName();
+                return value;
             }
         }
         throw new EmployeeNotFoundException("Сотрудник с номером паспорта " + passport + " не найден");
