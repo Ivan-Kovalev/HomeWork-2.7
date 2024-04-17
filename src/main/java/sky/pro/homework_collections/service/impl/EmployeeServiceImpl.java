@@ -1,22 +1,23 @@
-package sky.pro.homework_collections.service;
+package sky.pro.homework_collections.service.impl;
 
 import org.springframework.stereotype.Service;
 import sky.pro.homework_collections.domain.Employee;
 import sky.pro.homework_collections.exception.EmployeeAlreadyAddedException;
 import sky.pro.homework_collections.exception.EmployeeNotFoundException;
 import sky.pro.homework_collections.exception.EmployeeStorageIsFullException;
+import sky.pro.homework_collections.service.EmployeeService;
 
 import java.util.*;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private final int employeeSize = 3;
+    private final int employeeSize = 10;
     private final Map<Integer, Employee> employeeMap = new HashMap<>(employeeSize);
 
     @Override
-    public Employee add(String firstName, String lastName, Integer passport) {
-        Employee employee = new Employee(firstName, lastName, passport);
+    public Employee add(Integer passport, String firstName, String lastName, Integer salary, Integer department) {
+        Employee employee = new Employee(passport, firstName, lastName, salary, department);
         if (employeeMap.size() >= employeeSize) {
             throw new EmployeeStorageIsFullException("Список сотрудников полон");
         }
@@ -51,6 +52,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Collection<Employee> printAllEmployees() {
-        return new ArrayList<>(employeeMap.values());
+        return Collections.unmodifiableCollection(employeeMap.values());
     }
 }
