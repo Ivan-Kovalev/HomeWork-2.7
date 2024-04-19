@@ -37,7 +37,7 @@ public class DepartmentController {
     }
 
     @GetMapping(path = "/all-departments")
-    public Map<Integer, Employee> printAllDepartments() {
-        return departmentService.printAllDepartments();
+    public Map<Integer, List<Employee>> printAllDepartments() {
+        return departmentService.findEmployeesByDepartment();
     }
 }

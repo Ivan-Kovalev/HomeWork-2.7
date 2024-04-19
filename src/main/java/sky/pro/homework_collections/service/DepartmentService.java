@@ -13,5 +13,5 @@ public interface DepartmentService {
 
     List<Employee> printEmployeesForDepartment(Integer department);
 
-    Map<Integer, Employee> printAllDepartments();
+    Map<Integer, List<Employee>> findEmployeesByDepartment();
 }
