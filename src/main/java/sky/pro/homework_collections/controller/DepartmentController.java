@@ -33,7 +33,7 @@ public class DepartmentController {
 
     @GetMapping(path = "/all")
     public List<Employee> printAllEmployeesForDep(@RequestParam("departmentId") Integer depId) {
-        return departmentService.printEmployeesForDepartment(depId);
+        return departmentService.getEmployeesForDepartment(depId);
     }
 
     @GetMapping(path = "/all-departments")

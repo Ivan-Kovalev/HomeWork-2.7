@@ -6,7 +6,7 @@ public class Employee {
     private Integer passport;
     private String firstName;
     private String lastName;
-    private String name = firstName + " " + lastName;
+    private final String name;
     private Integer salary;
     private Integer department;
 
@@ -14,6 +14,7 @@ public class Employee {
         this.passport = passport;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.name = firstName + " " + lastName;
         this.salary = salary;
         this.department = department;
     }
@@ -70,7 +71,6 @@ public class Employee {
         return Objects.equals(passport, employee.passport) &&
                 Objects.equals(firstName, employee.firstName) &&
                 Objects.equals(lastName, employee.lastName) &&
-                Objects.equals(name, employee.name) &&
                 Objects.equals(salary, employee.salary) &&
                 Objects.equals(department, employee.department);
     }

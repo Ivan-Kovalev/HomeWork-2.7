@@ -37,7 +37,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<Employee> printEmployeesForDepartment(Integer department) {
+    public List<Employee> getEmployeesForDepartment(Integer department) {
         return employeeService.printAllEmployees().stream()
                 .filter(e -> e.getDepartment().equals(department))
                 .collect(Collectors.toList());
