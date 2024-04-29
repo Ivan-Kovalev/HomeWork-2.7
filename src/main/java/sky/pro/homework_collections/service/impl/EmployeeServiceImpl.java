@@ -1,5 +1,6 @@
 package sky.pro.homework_collections.service.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import sky.pro.homework_collections.domain.Employee;
 import sky.pro.homework_collections.exception.EmployeeAlreadyAddedException;
@@ -17,7 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee add(Integer passport, String firstName, String lastName, Integer salary, Integer department) {
-        Employee employee = new Employee(passport, firstName, lastName, salary, department);
+        Employee employee = new Employee(passport, StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), salary, department);
         if (employeeMap.size() >= employeeSize) {
             throw new EmployeeStorageIsFullException("Список сотрудников полон");
         }
